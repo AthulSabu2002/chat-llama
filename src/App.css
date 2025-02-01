@@ -40,3 +40,106 @@
 .read-the-docs {
   color: #888;
 }
+
+/* Message Container */
+.cs-message__content {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  line-height: 1.5;
+  max-width: 85%;
+  padding: 8px 12px !important;  /* Adjusted padding */
+  overflow: hidden;
+  white-space: pre-wrap !important;  /* Updated this */
+  border-radius: 8px;
+  display: inline-block;
+  width: auto;
+  word-break: break-word;  /* Added this */
+}
+
+/* Basic Message Content */
+.cs-message__content > span {
+  white-space: pre-wrap !important; /* Ensure pre-wrap for proper line breaks */
+  word-break: break-word;
+}
+
+/* Code Block Container */
+.code-block {
+  margin: 8px 0;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #1e1e1e;
+}
+
+/* Code Header */
+.code-header {
+  background: #2d2d2d;
+  color: #e6e6e6;
+  padding: 6px 12px;
+  font-family: 'Fira Code', monospace;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+/* Code Content */
+.code-block pre {
+  margin: 0;
+  padding: 12px;
+  overflow-x: auto;
+}
+
+.code-block code {
+  font-family: 'Fira Code', monospace;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+/* Text Block */
+.text-block {
+  display: inline;
+  white-space: normal;  /* Changed from pre-line */
+  word-break: break-word;
+  margin: 0;  /* Reset margin */
+  padding: 0;  /* Reset padding */
+}
+
+/* Message Bubbles */
+.cs-message--incoming .cs-message__content {
+  background: #f8f9fa !important;
+  color: black;
+}
+
+.cs-message--outgoing .cs-message__content {
+  background: #0b93f6 !important;
+  color: white;
+  text-align: left;  /* Added this */
+}
+
+/* Remove any existing text-block styles for outgoing messages */
+.cs-message--outgoing .text-block {
+  all: unset;  /* Added this */
+  color: inherit;
+}
+
+/* Message Spacing */
+.cs-message {
+  margin: 0.5rem 0;
+}
+
+/* Message Alignment */
+.cs-message--outgoing {
+  text-align: right;
+}
+
+.cs-message--incoming {
+  text-align: left;
+}
+
+/* Remove all special formatting for plain text */
+.cs-message__content:not(:has(.code-block)) {
+  white-space: pre-wrap !important; /* Ensure pre-wrap for proper line breaks */
+}
+
+/* Syntax Highlighting Overrides */
+.token.comment { color: #6a9955; }
+.token.string { color: #ce9178; }
+.token.number { color: #b5cea8; }
+.token.property { color: #9cdcfe; }
